@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1670039449 source:d:\workspace\cpp\doancpp\main.cpp
+	<math.h>
+	<graphics.h>
+	"shape/shape.h"
+
+1670038129 d:\workspace\cpp\doancpp\2d\rect.h
+	<graphics.h>
+	<iostream>
+
+1670039441 d:\workspace\cpp\doancpp\shape\rect.h
+	<graphics.h>
+	<iostream>
+
+1670039529 d:\workspace\cpp\doancpp\shape\shape.h
+	"Rect.h"
+	"Ellipse.h"
+
+1670039503 d:\workspace\cpp\doancpp\shape\ellipse.h
+	<graphics.h>
+	<iostream>
+

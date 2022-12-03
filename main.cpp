@@ -1,11 +1,13 @@
-#include "graphics.h"
-
 #include<math.h>
+#include<graphics.h>
+#include "element/Element.h"
+
 int main()
 {
     int x,y, r = 10;
     float t=0;
     initwindow(640,480);
+    element::Button(1, 2);
 
     while(!kbhit()){
         t = t + 0.01;
