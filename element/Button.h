@@ -1,8 +1,16 @@
 #include <graphics.h>
 #include <iostream>
 
-class element:
+class element::Button {
+    element::Pos pos;
 
-void Element::Button(int x, int y) {
-    rectangle(100,100,200,200);
+    public:
+        void update() {
+        }
+        void draw() {
+            rectangle(100,100,200,200);
+        }
+        void onClick() {
+            std::cout<<"test";
+        }
 }
