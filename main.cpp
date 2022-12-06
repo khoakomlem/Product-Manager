@@ -13,8 +13,16 @@ int main()
     initwindow(1366, 768);
 
     elements.push_back(new element::EditableLabel("Tesst", (element::Pos){10, 10}, 100, 100));
-    elements.push_back(new element::Table((element::Pos){10, 10}, 300, 300, (element::Collumn[]){{"1", 10}, {"2", 20}, {"3", 30}}));
-    elements[1]->visible = 0;
+    element::Column arr[3] = {{"1", 10}, {"2", 20}, {"3", 30}};
+
+    // list item table
+    std::vector<element::Column> cData;
+    cData.push_back((element::Column){"id", 100});
+    cData.push_back((element::Column){"name", 200});
+    cData.push_back((element::Column){"description", 700});
+    cData.push_back((element::Column){"modify", 50});
+    cData.push_back((element::Column){"remove", 50});
+    elements.push_back(new element::Table((element::Pos){10, 10}, 300, 300, cData));
 
     bool requestClearDevice = false;
 
@@ -32,7 +40,6 @@ int main()
             elements[i]->update(&elements);
             requestClearDevice = elements[i]->draw();
         }
-        std::cout << elements[1]->visible;
     }
     closegraph();
 }

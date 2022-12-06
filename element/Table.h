@@ -18,10 +18,10 @@ class element::Table : public element::Element {
         int height;
         int cols;
         int rows;
-        element::Column* colData;
+        std::vector<element::Column*> colData;
 
         void update(std::vector<element::Element*>* elements) {
-            for(std::vector<int>::size_type i = 0; i != (*elements).size(); i++) {
+            for(std::vector<element::Element*>::size_type i = 0; i != (*elements).size(); i++) {
                 //(*elements)[i]->visible = 1;
                 //std::cout << i;
             }
@@ -38,8 +38,8 @@ class element::Table : public element::Element {
 
             // draw columns
             int curX = pos.x;
-            for(std::vector<element::Column*>::size_type i = 0; i != (*colData).size(); i++) {
-                curX += colData[i];
+            for(std::vector<element::Column*>::size_type i = 0; i != colData.size(); i++) {
+                curX += colData[i]->size;
                 line(curX, pos.y, curX, pos.y + height);
             }
 
@@ -51,13 +51,10 @@ class element::Table : public element::Element {
             return false;
         }
 
-        Table(element::Pos pos, int width, int height, element::Column colData[]) : Element(pos) {
+        Table(element::Pos pos, int width, int height, std::vector<element::Column*> cData) : Element(pos) {
             this->width = width;
             this->height = height;
-            this->colSizes = colSizes; // size - 1
             this->rows = (pos.y + height) % COL_SIZE + 1;
-
-            std::vector<element::Column> sizes(colData, colData + sizeof(colData)/sizeof(element::Column));
             this->colData = colData;
         }
 };
