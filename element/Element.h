@@ -1,3 +1,4 @@
+#include <iostream>
 #ifndef NAMESPACES
 #define NAMESPACES
 //Element: button, table, ...
@@ -6,30 +7,33 @@ namespace element {
     class Button;
     class EditableLabel;
     class Table;
+    struct Pos;
+    struct Column;
 }
 #endif
 
+struct element::Pos {
+    int x, y;
+};
+
 class element::Element {
-    bool visible = true;
-    bool markAsRemove = false;
-    public:
-        void update();
-        void draw();
-        void onClick();
-        void onKeyDown(keyCode);    
-}
 
-class element::Pos {
-    int x = 0;
-    int y = 0;
-    
     public:
-        void set(int x, y) {
-            this->x = x;
-            this->y = y;
+        element::Pos pos;
+        bool visible;
+        bool markAsRemove;
+
+        virtual void update(std::vector<element::Element*>* elements) {};
+        virtual bool draw() {};
+        virtual void onClick() {};
+        virtual void onKeyDown(int keyCode) {};
+
+        Element(element::Pos pos) {
+            this->pos = pos;
+            this->visible = true;
+            this->markAsRemove = false;
         }
-}
-
+};
 #include "Button.h"
 #include "EditableLabel.h"
 #include "Table.h"

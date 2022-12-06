@@ -1,8 +1,6 @@
 # depslib dependency file v1.0
-1670039449 source:d:\workspace\cpp\doancpp\main.cpp
-	<math.h>
-	<graphics.h>
-	"shape/shape.h"
+1670296926 source:d:\workspace\cpp\doancpp\main.cpp
+	<iostream>
 
 1670038129 d:\workspace\cpp\doancpp\2d\rect.h
 	<graphics.h>
@@ -19,4 +17,24 @@
 1670039503 d:\workspace\cpp\doancpp\shape\ellipse.h
 	<graphics.h>
 	<iostream>
+
+1670290023 d:\workspace\cpp\doancpp\element\element.h
+	<iostream>
+	"Button.h"
+	"EditableLabel.h"
+	"Table.h"
+
+1670289952 d:\workspace\cpp\doancpp\element\button.h
+	<iostream>
+	<graphics.h>
+
+1670291993 d:\workspace\cpp\doancpp\element\editablelabel.h
+	<graphics.h>
+
+1670295370 d:\workspace\cpp\doancpp\element\table.h
+	<graphics.h>
+	<functional>
+	<iostream>
+	<memory>
+	<cstddef>
 
