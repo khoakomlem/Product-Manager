@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/workspace/Product-Manager",
-      "program": "d:/workspace/Product-Manager/build/Debug/outDebug",
+      "cwd": "d:/workspace/cpp/DoAnCpp",
+      "program": "d:/workspace/cpp/DoAnCpp/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

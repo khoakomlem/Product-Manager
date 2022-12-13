@@ -9,9 +9,9 @@
 
 int main()
 {
+    std::cout<<"noob";
     std::vector<element::Element*> elements;
     initwindow(1366, 768);
-
     elements.push_back(new element::EditableLabel("Tesst", (element::Pos){10, 10}, 100, 100));
     element::Column arr[3] = {{"1", 10}, {"2", 20}, {"3", 30}};
 
@@ -22,7 +22,7 @@ int main()
     cData.push_back((element::Column){"description", 700});
     cData.push_back((element::Column){"modify", 50});
     cData.push_back((element::Column){"remove", 50});
-    elements.push_back(new element::Table((element::Pos){10, 10}, 300, 300, cData));
+    elements.push_back(new element::Table((element::Pos){10, 10}, 300, cData));
 
     bool requestClearDevice = false;
 
@@ -37,9 +37,11 @@ int main()
                 i--;
                 continue;
             }
-            elements[i]->update(&elements);
+            elements[i]->update();
             requestClearDevice = elements[i]->draw();
         }
     }
+
     closegraph();
+    getch();
 }

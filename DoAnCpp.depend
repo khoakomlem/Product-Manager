@@ -1,6 +1,13 @@
 # depslib dependency file v1.0
-1670296926 source:d:\workspace\cpp\doancpp\main.cpp
+1670892683 source:d:\workspace\cpp\doancpp\main.cpp
+	<algorithm>
+	<vector>
+	<math.h>
+	<graphics.h>
+	<functional>
 	<iostream>
+	<memory>
+	"element/Element.h"
 
 1670038129 d:\workspace\cpp\doancpp\2d\rect.h
 	<graphics.h>
@@ -18,8 +25,7 @@
 	<graphics.h>
 	<iostream>
 
-1670290023 d:\workspace\cpp\doancpp\element\element.h
-	<iostream>
+1670460815 d:\workspace\cpp\doancpp\element\element.h
 	"Button.h"
 	"EditableLabel.h"
 	"Table.h"
@@ -28,10 +34,10 @@
 	<iostream>
 	<graphics.h>
 
-1670291993 d:\workspace\cpp\doancpp\element\editablelabel.h
+1670342169 d:\workspace\cpp\doancpp\element\editablelabel.h
 	<graphics.h>
 
-1670295370 d:\workspace\cpp\doancpp\element\table.h
+1670889970 d:\workspace\cpp\doancpp\element\table.h
 	<graphics.h>
 	<functional>
 	<iostream>

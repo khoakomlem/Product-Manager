@@ -48,7 +48,7 @@ class element::EditableLabel : public element::Element {
                     outX += margin.left;
                     break;
                 case CENTER:
-                    outX += std::max(margin.left, boundary.width / 2);
+                    outX += std::max(margin.left, boundary.width / 2 - (int)body.length() * 4);
                     break;
                 case RIGHT:
                     outX += boundary.width - margin.right;
@@ -72,7 +72,7 @@ class element::EditableLabel : public element::Element {
 
         EditableLabel(std::string body, element::Pos pos, int width, int height) : Element(pos) {
             this->body = body;
-            this->align = {LEFT, TOP};
+            this->align = {MIDDLE, TOP};
             // 0: left; 1: center; 2: right;
             // 0: top; 1: middle; 2: bottom;
             this->margin = {5, 5, 5, 5}; // pixels
