@@ -1,5 +1,3 @@
-#include <graphics.h>
-
 class element::EditableLabel : public element::Element {
     public:
         static const int LEFT = 0;
@@ -32,14 +30,17 @@ class element::EditableLabel : public element::Element {
         std::string body;
 
         bool draw() {
-            element::Pos pos = computePos();
+            sat2d::Vector pos = computePos();
             outtextxy(pos.x, pos.y, (char*)body.c_str());
             return false;
         }
-        void onClick() {
-            // chuyen sang editable
+
+        bool isMouseHovering(int mouseX, int mouseY) {
+            // std::cout<<pos.x<<" "<<pos.y<<" "<<boundary.width<<" "<<boundary.height<<" "<<mouseX<<" "<<mouseY<<std::endl;
+            return sat2d::pointInBox((sat2d::Vector){mouseX, mouseY}, (sat2d::Box){pos, boundary.width, boundary.height});
         }
-        Pos computePos() {
+
+        sat2d::Vector computePos() {
             int outX = boundary.x;
             int outY = boundary.y;
 
@@ -67,10 +68,10 @@ class element::EditableLabel : public element::Element {
                     break;
             }
 
-            return (element::Pos){outX, outY};
+            return (sat2d::Vector){outX, outY};
         }
 
-        EditableLabel(std::string body, element::Pos pos, int width, int height) : Element(pos) {
+        EditableLabel(std::string body, sat2d::Vector pos, int width, int height) : Element(pos) {
             this->body = body;
             this->align = {MIDDLE, TOP};
             // 0: left; 1: center; 2: right;

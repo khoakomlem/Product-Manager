@@ -6,34 +6,32 @@ namespace element {
     class Button;
     class EditableLabel;
     class Table;
-    struct Pos;
     struct Column;
 }
 #endif
 
-struct element::Pos {
-    int x, y;
-};
-
 class element::Element {
 
     public:
-        element::Pos pos;
+        vector<Element*> elements;
+        sat2d::Vector pos;
         bool visible;
         bool markAsRemove;
 
         virtual void update() {};
         virtual bool draw() { return false; };
-        virtual void onClick() {};
+        virtual void onClick(int mouseX, int mouseY) {};
         virtual void onKeyDown(int keyCode) {};
+        virtual bool isMouseHovering(int mouseX, int mouseY) { return false; };
 
-        Element(element::Pos pos) {
+        Element(sat2d::Vector pos) {
+            this->element
             this->pos = pos;
             this->visible = true;
             this->markAsRemove = false;
         }
 };
 
-#include "Button.h"
 #include "EditableLabel.h"
+#include "Button.h"
 #include "Table.h"

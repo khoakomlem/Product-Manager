@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1670892683 source:d:\workspace\cpp\doancpp\main.cpp
+1671097980 source:d:\workspace\cpp\doancpp\main.cpp
 	<algorithm>
 	<vector>
 	<math.h>
@@ -7,6 +7,7 @@
 	<functional>
 	<iostream>
 	<memory>
+	"sat2d/Sat2d.h"
 	"element/Element.h"
 
 1670038129 d:\workspace\cpp\doancpp\2d\rect.h
@@ -25,22 +26,33 @@
 	<graphics.h>
 	<iostream>
 
-1670460815 d:\workspace\cpp\doancpp\element\element.h
+1671096059 d:\workspace\cpp\doancpp\element\element.h
 	"Button.h"
 	"EditableLabel.h"
 	"Table.h"
 
-1670289952 d:\workspace\cpp\doancpp\element\button.h
+1671096068 d:\workspace\cpp\doancpp\element\button.h
 	<iostream>
 	<graphics.h>
 
-1670342169 d:\workspace\cpp\doancpp\element\editablelabel.h
+1671096849 d:\workspace\cpp\doancpp\element\editablelabel.h
 	<graphics.h>
 
-1670889970 d:\workspace\cpp\doancpp\element\table.h
+1671098006 d:\workspace\cpp\doancpp\element\table.h
 	<graphics.h>
 	<functional>
 	<iostream>
 	<memory>
 	<cstddef>
+
+1671096004 d:\workspace\cpp\doancpp\sat2d\sat2d.h
+	"Vector.h"
+	"Box.h"
+	"Point.h"
+
+1671095802 d:\workspace\cpp\doancpp\sat2d\vector.h
+
+1671095877 d:\workspace\cpp\doancpp\sat2d\box.h
+
+1671029021 d:\workspace\cpp\doancpp\sat2d\point.h
 

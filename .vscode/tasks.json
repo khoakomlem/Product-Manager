@@ -8,9 +8,9 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
-				"${file}",
+				"${workspaceFolder}\\main.cpp",
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"${workspaceFolder}\\main.exe",
 				"-lbgi",
 				"-lgdi32",
 				"-lcomdlg32",
@@ -22,7 +22,10 @@
 				"cwd": "C:\\MinGW\\bin"
 			},
 			"problemMatcher": ["$gcc"],
-			"group": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
 			"detail": "compiler: C:\\MinGW\\bin\\g++.exe"
 		}
 	]

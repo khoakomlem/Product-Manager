@@ -57,7 +57,13 @@
 			"cstdarg": "cpp",
 			"cwctype": "cpp",
 			"sstream": "cpp",
-			"random": "cpp"
+			"random": "cpp",
+			"array": "cpp",
+			"unordered_map": "cpp",
+			"algorithm": "cpp",
+			"memory_resource": "cpp",
+			"numeric": "cpp",
+			"fstream": "cpp"
 		}
 	}
 }

@@ -21,6 +21,23 @@ class element::Table : public element::Element {
         std::vector<element::Column> colData;
         std::vector<std::vector<element::Element*> > tableData;
 
+        bool isMouseHovering(int mouseX, int mouseY) {
+            return sat2d::pointInBox((sat2d::Vector){mouseX, mouseY}, (sat2d::Box){pos, width, height});
+        }
+
+        void onClick(int mouseX, int mouseY) {
+            for (int i = 0; i != tableData.size(); ++i) {
+                for (int j = 0; j != tableData[i].size(); ++j) {
+                    if (tableData[i][j]->isMouseHovering(mouseX, mouseY)) {
+                        tableData[i][j]->onClick(mouseX, mouseY);
+                        // std::cout<<"found!"<<std::endl;
+                        break;
+                    }
+                }
+                    std::cout << std::endl;
+            }
+        }
+
         void update() {
             //for(std::vector<element::Element*>::size_type i = 0; i != (*elements).size(); i++) {
                 //(*elements)[i]->visible = 1;
@@ -60,14 +77,14 @@ class element::Table : public element::Element {
             return false;
         }
 
-        Table(element::Pos pos, int height, std::vector<element::Column> cData) : Element(pos) {
+        Table(sat2d::Vector pos, int height, std::vector<element::Column> cData) : Element(pos) {
             this->height = height;
             this->width = 0;
             std::vector<element::Element*> headers;
             int curX = 10;
             for (int i = 0; i != cData.size(); ++i) {
                 this->width += cData[i].size;
-                headers.push_back(new element::EditableLabel(cData[i].header, (element::Pos){curX, 10}, cData[i].size, 100));
+                headers.push_back(new element::Button(cData[i].header, (sat2d::Vector){curX, 10}, cData[i].size, COL_SIZE));
                 curX += cData[i].size;
             }
             this->tableData.push_back(headers);

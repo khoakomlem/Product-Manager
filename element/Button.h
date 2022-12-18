@@ -1,23 +1,15 @@
-#include <iostream>
-#include <graphics.h>
-
-
-class element::Button : public element::Element {
-
+class element::Button : public element::EditableLabel {
     public:
-        int width;
-        int height;
-
         bool draw() {
-            rectangle(100,100,200,200);
+            element::EditableLabel::draw();
+            // rectangle(100,100,200,200);
             return false;
         }
-        void onClick() {
+        void onClick(int mouseX, int mouseY) {
             std::cout<<"test";
         }
 
-        Button(element::Pos pos, int width, int height) : Element(pos) {
-            this->width = width;
-            this->height = height;
+        Button(std::string body, sat2d::Vector pos, int width, int height) : EditableLabel(body, pos, width, height) {
+
         }
 };
