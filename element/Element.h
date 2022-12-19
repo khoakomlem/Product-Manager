@@ -10,22 +10,44 @@ namespace element {
 }
 #endif
 
+// Element hoat dong theo co che event bubbling 
+
 class element::Element {
 
     public:
-        vector<Element*> elements;
+        std::vector<element::Element*> elements;
         sat2d::Vector pos;
         bool visible;
         bool markAsRemove;
 
-        virtual void update() {};
-        virtual bool draw() { return false; };
-        virtual void onClick(int mouseX, int mouseY) {};
+        virtual void update() {
+            for(int i = 0; i != elements.size(); i++) {
+                if (elements[i]->markAsRemove) {
+                    elements.erase(elements.begin() + i);
+                    i--;
+                    continue;
+                }
+                elements[i]->update();
+            }
+        };
+        virtual bool draw() {
+            for(int i = 0; i != elements.size(); i++) {
+                elements[i]->draw();
+            }
+            return false;
+        };
+        virtual void onClick(int mouseX, int mouseY) {
+            for(int i = 0; i != elements.size(); i++) {
+                bool isHovering = elements[i]->isMouseHovering(mouseX, mouseY);
+                if (isHovering) {
+                    elements[i]->onClick(mouseX, mouseY);
+                }
+            }
+        };
         virtual void onKeyDown(int keyCode) {};
         virtual bool isMouseHovering(int mouseX, int mouseY) { return false; };
 
         Element(sat2d::Vector pos) {
-            this->element
             this->pos = pos;
             this->visible = true;
             this->markAsRemove = false;
