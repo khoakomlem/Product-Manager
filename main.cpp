@@ -8,11 +8,11 @@
 #include "sat2d/Sat2d.h"
 #include "element/Element.h"
 
-element::Element document;
-
 int main()
 {
+    int framerate = 30;
     bool requestClearDevice = false;
+    element::Element* document = new element::Element((sat2d::Vector){0, 0});
     std::vector<element::Column> colData;
     element::Column arr[3] = {{"1", 10}, {"2", 20}, {"3", 30}};
 
@@ -23,21 +23,22 @@ int main()
     colData.push_back((element::Column){"modify", 100});
     colData.push_back((element::Column){"remove", 100});
     document->elements.push_back(new element::Table((sat2d::Vector){10, 10}, 300, colData));
+    document->elements.push_back(new element::Prompt((sat2d::Vector){100, 100}, "do you want to", 200, 100));
 
     initwindow(1366, 768);
     // settextstyle(3, HORIZ_DIR, 3);
 
     while (1) {
-        cleardevice();
         requestClearDevice = false;
-
-        document->update();
-        document->draw();
 
         // hook click event
         while (!ismouseclick(WM_LBUTTONDOWN))
         {
-            delay(100);
+            cleardevice();
+            document->update();
+            document->draw();
+            delay(1000/framerate * 1.0);
+            std::cout<<"test";
         }
         int mouseX, mouseY;
         getmouseclick(WM_LBUTTONDOWN, mouseX, mouseY);

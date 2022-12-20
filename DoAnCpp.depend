@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1671097980 source:d:\workspace\cpp\doancpp\main.cpp
+1671545942 source:d:\workspace\cpp\doancpp\main.cpp
 	<algorithm>
 	<vector>
 	<math.h>
@@ -26,26 +26,25 @@
 	<graphics.h>
 	<iostream>
 
-1671096059 d:\workspace\cpp\doancpp\element\element.h
-	"Button.h"
+1671545796 d:\workspace\cpp\doancpp\element\element.h
 	"EditableLabel.h"
+	"Button.h"
+	"OneTimeButton.h"
+	"Prompt.h"
 	"Table.h"
 
-1671096068 d:\workspace\cpp\doancpp\element\button.h
-	<iostream>
-	<graphics.h>
+1671546613 d:\workspace\cpp\doancpp\element\button.h
 
-1671096849 d:\workspace\cpp\doancpp\element\editablelabel.h
-	<graphics.h>
+1671545785 d:\workspace\cpp\doancpp\element\editablelabel.h
 
-1671098006 d:\workspace\cpp\doancpp\element\table.h
+1671446480 d:\workspace\cpp\doancpp\element\table.h
 	<graphics.h>
 	<functional>
 	<iostream>
 	<memory>
 	<cstddef>
 
-1671096004 d:\workspace\cpp\doancpp\sat2d\sat2d.h
+1671107543 d:\workspace\cpp\doancpp\sat2d\sat2d.h
 	"Vector.h"
 	"Box.h"
 	"Point.h"
@@ -55,4 +54,8 @@
 1671095877 d:\workspace\cpp\doancpp\sat2d\box.h
 
 1671029021 d:\workspace\cpp\doancpp\sat2d\point.h
+
+1671545759 d:\workspace\cpp\doancpp\element\onetimebutton.h
+
+1671547373 d:\workspace\cpp\doancpp\element\prompt.h
 

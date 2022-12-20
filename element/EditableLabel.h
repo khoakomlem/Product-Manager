@@ -29,7 +29,8 @@ class element::EditableLabel : public element::Element {
         Boundary boundary;
         std::string body;
 
-        bool draw() {
+        virtual bool draw() {
+            element::Element::draw();
             sat2d::Vector pos = computePos();
             outtextxy(pos.x, pos.y, (char*)body.c_str());
             return false;
@@ -49,7 +50,7 @@ class element::EditableLabel : public element::Element {
                     outX += margin.left;
                     break;
                 case CENTER:
-                    outX += std::max(margin.left, boundary.width / 2 - (int)body.length() * 4);
+                    outX += std::max(margin.left, (int)(boundary.width  / 2 - body.length() * 4));
                     break;
                 case RIGHT:
                     outX += boundary.width - margin.right;
@@ -71,12 +72,14 @@ class element::EditableLabel : public element::Element {
             return (sat2d::Vector){outX, outY};
         }
 
-        EditableLabel(std::string body, sat2d::Vector pos, int width, int height) : Element(pos) {
+        EditableLabel(sat2d::Vector pos, std::string body, int width, int height) : Element(pos) {
             this->body = body;
             this->align = {MIDDLE, TOP};
             // 0: left; 1: center; 2: right;
             // 0: top; 1: middle; 2: bottom;
             this->margin = {5, 5, 5, 5}; // pixels
             this->boundary = {pos.x, pos.y, width, height};
+        }
+        EditableLabel() {
         }
 };

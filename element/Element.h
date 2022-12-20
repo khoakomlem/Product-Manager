@@ -5,15 +5,15 @@ namespace element {
     class Element;
     class Button;
     class EditableLabel;
+    class OneTimeButton;
+    class Prompt;
     class Table;
     struct Column;
 }
 #endif
 
-// Element hoat dong theo co che event bubbling 
-
+// Element hoat dong giong che event bubbling
 class element::Element {
-
     public:
         std::vector<element::Element*> elements;
         sat2d::Vector pos;
@@ -52,8 +52,12 @@ class element::Element {
             this->visible = true;
             this->markAsRemove = false;
         }
+        Element() {
+        }
 };
 
 #include "EditableLabel.h"
 #include "Button.h"
+#include "OneTimeButton.h"
+#include "Prompt.h"
 #include "Table.h"
