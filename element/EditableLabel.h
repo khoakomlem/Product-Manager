@@ -62,7 +62,7 @@ class element::EditableLabel : public element::Element {
                     outY += margin.top;
                     break;
                 case MIDDLE:
-                    outY += std::max(margin.top, boundary.height / 2);
+                    outY += std::max(margin.top, boundary.height / 2 - 3);
                     break;
                 case BOTTOM:
                     outY += boundary.height - margin.bottom;
@@ -74,9 +74,7 @@ class element::EditableLabel : public element::Element {
 
         EditableLabel(sat2d::Vector pos, std::string body, int width, int height) : Element(pos) {
             this->body = body;
-            this->align = {MIDDLE, TOP};
-            // 0: left; 1: center; 2: right;
-            // 0: top; 1: middle; 2: bottom;
+            this->align = {CENTER, MIDDLE};
             this->margin = {5, 5, 5, 5}; // pixels
             this->boundary = {pos.x, pos.y, width, height};
         }

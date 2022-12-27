@@ -1,5 +1,3 @@
-#ifndef NAMESPACES
-#define NAMESPACES
 //Element: button, table, ...
 namespace element {
     class Element;
@@ -10,7 +8,6 @@ namespace element {
     class Table;
     struct Column;
 }
-#endif
 
 // Element hoat dong giong che event bubbling
 class element::Element {

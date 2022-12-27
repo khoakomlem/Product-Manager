@@ -1,25 +1,23 @@
-class model::Employee : model::Model {
-    public:
-        int id;
-        string name;
-        string datetime;
-        int citizen_id;
-        string address;
-        string mail;
-        int phone;
-        int working_yr;
+class model::Employee : public class model::Schema {
+public:
+    std::string name;
+    std::string birthday;
+    int citizen_id;
+    std::string address;
+    std::string mail;
+    int phone;
+    int working_yr;
 
-        Bill(string create_at, std::vector<int> items, int overall, int output, int employ_id) {
-            this->id = id;
-            this->create_at = create_at;
-            this->overall = overall;
-            this->input = input;
-            this->output = output;
-            this->employ_id = employ_id;
-            this->verify();
-        }
-
-        verify() {
-            this->id 
-        }
-}
+    void verify() {
+        if (name.length() > 256)
+            throw "Tên không quá 256 kí tự";
+        if (citizen_id / 1e11 == 0 || citizen_id / 1e11 > 9)
+            throw "So cccd phai dung 12 chu so";
+        if (address.length() > 256)
+            throw "Dia chi thuong tru khong qua 256 ki tu";
+        if (mail.length() > 256)
+            throw "Dia chi mail khong qua 256 ki tu";
+        if (phone / 1e9 == 0 || phone / 1e9 > 9)
+            throw "So dien thoai lien lac phai dung 10 chu so";
+    };
+};
