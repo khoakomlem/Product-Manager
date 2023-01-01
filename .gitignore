@@ -1,2 +1,5 @@
 objects/*
+!objects/.gitkeep
+
 bin/*
+!bin/.gitkeep
